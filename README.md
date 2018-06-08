@@ -9,7 +9,7 @@ This is an experimental Tensorflow implementation of RCNN - a convnet for object
 - `finetune_alexnet/`: Storage each epoch's weights in checkpints and log the finetuning progress in TensorBoard.
 - `Models/`: To storage alexnet weights and SVM Models.
 - `alexnet.py`: an TensorFLow implementation of [AlexNet](http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf) by Alex Krizhevsky at all.
-- `validate_alexnet.py`: If you wanna to validate alexnet, this script is helpful(This file has no relation with RCNN). You need are the pretrained weights, which you can find [here](http://www.cs.toronto.edu/%7Eguerzhoy/tf_alexnet/bvlc_alexnet.npy), place the weights file in 'Models/AlexNet/' and try command "python validat_alexnet.py":
+- `validate_alexnet.py`: If you wanna to validate alexnet, this script is helpful(This file has no relation with RCNN). You need are the pretrained weights, which you can find [here](http://www.cs.toronto.edu/%7Eguerzhoy/tf_alexnet/bvlc_alexnet.npy), place the weights file in 'Models/AlexNet/' and try command "python validat_alexnet.py":</br>
                           ![images](https://github.com/asensioatgithub/RCNN/blob/master/validate.png)
 - `finetune.py`、`datagenerator.py`: Scripts to finetune alexnet, [here](https://github.com/kratzert/finetune_alexnet_with_tensorflow) is the detail instructions to finetune alexnet.
 - `generate_finetune_data.py`: To generate the fixed format of train data and val data required by `finetune.py`. Notice this file only works on VOCdevkit, if you use other data sets, the implementation may not be the same. overall，each of them list the complete path to your train/val images together with the class number in the following structure.
