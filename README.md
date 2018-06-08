@@ -37,3 +37,20 @@ git clone https://github.com/asensioatgithub/RCNN.git
 ```
 python demo.py
 ```
+
+# Train Model 
+here are my steps to experience RCNN：
+1. wget the VOCPascll2012 datasets, or click [here](http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar):
+```
+wget http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2011.tar
+```
+2. Extract the tar to repo, so the directory looks like this:
+```
+images
+Models
+VOCtrainval_11-May-2012
+alexnet.py
+caffe_classes.py
+...
+```
+3. 
