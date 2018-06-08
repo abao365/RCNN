@@ -34,7 +34,7 @@ Example train.txt:
 ```
 git clone https://github.com/asensioatgithub/RCNN.git
 ```
-2. Click [here]() to download my tinetuned AlexNet weights and SVM Models, and put them in corresponding directory.
+2. Click [here]() to download my tinetuned AlexNet weights and SVM Models, and put them in corresponding directory in "Moldes/".
 3. Install the required python modules, and then instruct the follow cmd:
 ```
 python demo.py
