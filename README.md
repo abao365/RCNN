@@ -40,7 +40,7 @@ python demo.py
 ```
 
 # Train Model 
-here are my steps to experience RCNN：
+here are my steps to experience RCNN with VOCPascll2012, if you want to train other datasets, they are Referable. 
 1. wget the VOCPascll2012 datasets, or click [here](http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar):
 ```
 wget http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2011.tar
@@ -60,3 +60,6 @@ class_name = ["bus", "person", "car"] # The classes what rcnn to detect
 ...
 ```
 4. run generate_finetune_data.py to generate `finetune_train_list.txt` and `finetune_val_list.txt`, they are looks like:
+5. run finetune.py
+6. run train_svm.py
+7. run demo.py
