@@ -10,7 +10,9 @@
 - `validate_alexnet`: If you wanna to validate alexnet, this script is helpful, you need are the pretrained weights, which you can find [here](http://www.cs.toronto.edu/%7Eguerzhoy/tf_alexnet/bvlc_alexnet.npy), place the weights file in 'Models/AlexNet/' and try command "python validat_alexnet.py":
                           ![images](https://github.com/asensioatgithub/RCNN/blob/master/validate.png)
 - `finetune.py`、`datagenerator.py`: Scripts to finetune alexnet, [here](https://github.com/kratzert/finetune_alexnet_with_tensorflow) is the detail instructions to finetune alexnet.
-- `generate_finetune_data.py`: To generate the fixed format of train data and val data required by `finetune.py`. Notice this file only works on VOCdevkit, if you use other data sets, the implementation may not be the same. overall，each of them list the complete path to your train/val images together with the class number in the following structure.
+- `generate_finetune_data.py`: To generate the fixed format of train data and val data required by `finetune.py`. Notice this file only works on VOCdevkit:
+
+if you use other data sets, the implementation may not be the same. overall，each of them list the complete path to your train/val images together with the class number in the following structure.
 ```
 Example train.txt:
 /path/to/train/image1.png 0
@@ -21,6 +23,17 @@ Example train.txt:
 .
 ```
 - `ckpt2npy`: Change the format form '.ckpy' to '.npy' of alexnet weights.
-- `tool.py`: Some func implements for other files calls, such as non maximum suppression(NMS)、Intersection over Union(IOU)..., and also a func to call module `selectivesearch.selective_search`, you can try "python tool.py" to check the proposal rectangles generate by 'selective_search':
+- `tool.py`: Some func implements for other files calls, such as Non Maximum Suppression(NMS)、Intersection over Union(IOU)..., and also a func to call module `selectivesearch.selective_search`, you can try "python tool.py" to check the proposal rectangles generate by 'selective_search':
                           ![image](https://github.com/asensioatgithub/RCNN/blob/master/pro_rect.png)</br>
 **Note**： The proposal rectangles are different according to the argu `scale, sigma, min_size` in func selective_search().
+
+# Usage
+1. Clone the Fast R-CNN repository
+```
+git clone https://github.com/asensioatgithub/RCNN.git
+```
+2. Click [here]() to download my tinetuned AlexNet weights \
+3. Install the required python modules, and then instruct the follow cmd:
+```
+python demo.py
+```
