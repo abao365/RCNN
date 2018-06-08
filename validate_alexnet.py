@@ -22,7 +22,7 @@ with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
     model.load_initial_weights(sess)
 
-    img = cv2.imread("./VOCtrainval_11-May-2012/VOCdevkit/VOC2012/JPEGImages/2007_000549.jpg")
+    img = cv2.imread("Images/zebra.jpeg")
     #img preprocess
     resized = cv2.resize(img.astype(np.float), (227, 227)) - imgMean
     probs = sess.run(softmax, feed_dict = {x: resized.reshape((1, 227, 227, 3))})
@@ -31,7 +31,7 @@ with tf.Session() as sess:
     res = "class:"+class_name+"  probabliity:%.4f"%probs[0,np.argmax(probs)]
 
     font = cv2.FONT_HERSHEY_SIMPLEX
-    cv2.putText(img, res, (0, 20), font, 0.5, (0, 0, 255), 1)
+    cv2.putText(img, res, (0, 30), font, 1, (0, 0, 255), 1)
     cv2.imshow("demo", img)
     cv2.waitKey(0)
 
