@@ -1,4 +1,6 @@
 # A simple implements of RCNN with tensorflow
+## Introduction
+This is an experimental Tensorflow implementation of RCNN - a convnet for object detection with a region proposal network. For details about R-CNN please refer to the paper R-CNN: [Rich feature hierarchies for accurate object detection and semantic segmentation](http://xueshu.baidu.com/s?wd=paperuri:%286f32e0834ddb27b36d7c5cda472a768d%29&filter=sc_long_sign&tn=SE_xueshusource_2kduw22v&sc_vurl=http://arxiv.org/abs/1311.2524&ie=utf-8&sc_us=2810736414368325775) by Ross Girshick, Jeff Donahue, Trevor Darrell, Jitendra Malik.
 # Requirements
 - python 3.6
 - tensorflow 1.2.1
@@ -32,7 +34,7 @@ Example train.txt:
 ```
 git clone https://github.com/asensioatgithub/RCNN.git
 ```
-2. Click [here]() to download my tinetuned AlexNet weights \
+2. Click [here]() to download my tinetuned AlexNet weights and SVM Models, and put them in corresponding directory.
 3. Install the required python modules, and then instruct the follow cmd:
 ```
 python demo.py
