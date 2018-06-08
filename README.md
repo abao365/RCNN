@@ -53,4 +53,9 @@ alexnet.py
 caffe_classes.py
 ...
 ```
-3. 
+3. Adjust parameter in config.py scenes
+```
+class_name = ["bus", "person", "car"] # The classes what rcnn to detect
+...
+```
+4. run generate_finetune_data.py to generate `finetune_train_list.txt` and `finetune_val_list.txt`, they are looks like:
