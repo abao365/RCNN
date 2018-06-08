@@ -7,8 +7,8 @@ import caffe_classes
 
 
 #some params
-dropoutPro = 1
-classNum = 2
+dropoutPro = 0.5
+classNum = 1000
 skip = []
 
 imgMean = np.array([104, 117, 124], np.float)
