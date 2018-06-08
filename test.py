@@ -7,7 +7,7 @@ import numpy as np
 np.set_printoptions(suppress=True)
 import tensorflow as tf
 import matplotlib.pyplot as plt
-from tool import image_rect_proposal, IOU
+from tool import image_rect_proposal, IOU, NMS
 
 dropoutPro = 0.5
 classNum = config.num_class +1
@@ -23,26 +23,7 @@ model.load_initial_weights(sess)
 score = model.fc8
 softmax = tf.nn.softmax(score)
 
-# 非极大值抑制算法
-def NMS(rects, threshold):
-    # 按probability升序排序
-    rects = sorted(rects, key=operator.itemgetter('prob'), reverse = True)
-    length = len(rects)
-    flag = [0] * length # 是否抑制标记数组
-    # result.append(rects[0]) # rects[0]是当前分数最大的窗口，肯定保留 
-    for i in range(len(rects)-1):
-        if flag[i] == 1:
-            continue
-        for j in range(i+1, len(rects)):
-            if flag[j] == 1:
-                continue 
-            if IOU(rects[i]['rect'], rects[j]['rect']) > threshold:
-                flag[j] = 1
-    result = []
-    for i in range(len(flag)):
-        if flag[i] == 0:
-            result.append(rects[i])
-    return result
+
             
 def show_rect(img_path, regions):
     '''

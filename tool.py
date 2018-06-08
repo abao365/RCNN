@@ -6,6 +6,27 @@ import numpy as np
 import selectivesearch
 import matplotlib.pyplot as plt
 
+# 非极大值抑制算法
+def NMS(rects, threshold):
+    # 按probability升序排序
+    rects = sorted(rects, key=operator.itemgetter('prob'), reverse = True)
+    length = len(rects)
+    flag = [0] * length # 是否抑制标记数组
+    # result.append(rects[0]) # rects[0]是当前分数最大的窗口，肯定保留 
+    for i in range(len(rects)-1):
+        if flag[i] == 1:
+            continue
+        for j in range(i+1, len(rects)):
+            if flag[j] == 1:
+                continue 
+            if IOU(rects[i]['rect'], rects[j]['rect']) > threshold:
+                flag[j] = 1
+    result = []
+    for i in range(len(flag)):
+        if flag[i] == 0:
+            result.append(rects[i])
+    return result
+
 def resize_image(in_image, new_width, new_height, out_image=None, resize_mode=cv2.INTER_CUBIC):
     '''
     
@@ -141,7 +162,7 @@ def show_rect(img_path, regions, message):
 # 测试候选框
 def main():
     
-    img_path = "images/llama.jpeg"
+    img_path = "images/2008_004711.jpg"
     img = cv2.imread(img_path)
     imgs, verts =  image_rect_proposal(img)
     # print(verts)
