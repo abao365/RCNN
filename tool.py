@@ -3,6 +3,7 @@ import cv2
 import config
 import pickle
 import skimage
+import operator
 import numpy as np
 import selectivesearch
 import matplotlib.pyplot as plt
