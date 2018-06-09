@@ -13,7 +13,7 @@ contact: f.kratzert(at)gmail.com
 """
 
 import os
-
+import config
 import numpy as np
 import tensorflow as tf
 
@@ -31,13 +31,13 @@ train_file = 'finetune_train_list.txt'
 val_file = 'finetune_val_list.txt'
 
 # Learning params
-learning_rate = 0.002
-num_epochs = 10
-batch_size = 128
+learning_rate = config.learning_rate
+num_epochs = config.epoch
+batch_size = config.batch_size
 
 # Network params
 dropout_rate = 0.5
-num_classes = 4
+num_classes = config.num_class +1
 train_layers = ['fc8', 'fc7', 'fc6']
 
 # How often we want to write the tf.summary data to disk

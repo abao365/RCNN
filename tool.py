@@ -1,5 +1,6 @@
 import os
 import cv2
+import config
 import pickle
 import skimage
 import numpy as np
@@ -105,7 +106,7 @@ def image_rect_proposal(img):
     因此要经过一系列的规则加以限制来进一步减小特征框的数量
     '''
     # python的selective search函数
-    imgs, regions = selectivesearch.selective_search(img, scale=500, sigma=0.5, min_size=500)
+    imgs, regions = selectivesearch.selective_search(img, scale=config.proposal_scale, sigma=config.proposal_sigma, min_size=config.proposal_minsize)
   #  print("count: ",len(regions))
     candidates = set()
     images = []

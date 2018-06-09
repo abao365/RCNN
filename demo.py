@@ -44,7 +44,7 @@ def show_rect(img_path, regions):
     plt.show()
 
 def main():
-    img_path = "./images/2011_000095.jpg"
+    img_path = "./images/2008_004711.jpg"
     img =  cv2.imread(img_path)
 
     # 生成候选框

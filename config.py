@@ -2,15 +2,15 @@ class_name = ["bus", "person", "car"]
 num_class = len(class_name)
 background_index = num_class
 
-proposal_scale = 800
+proposal_scale = 100
 proposal_sigma = 0.5
-proposal_minsize = 800
+proposal_minsize = 100
 
 epoch = 10
 batch_size = 128
 pos_size_each_batch = 32
 neg_size_each_batch = 96
-learning_rate = 0.001
+learning_rate = 0.002
 finetune_IOU_threshold = 0.5
 
 SVM_IOU_threshold = 0.7
