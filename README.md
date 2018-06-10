@@ -33,7 +33,7 @@ Example train.txt:
 ```
 git clone https://github.com/asensioatgithub/RCNN.git
 ```
-2. Click [here](https://pan.baidu.com/s/1i6S3MAjQ4LBbQ7Rbat5wRQ) to download my tinetuned AlexNet weights and SVM Models, and put them in corresponding directory in "Moldes/".
+2. Click [here](https://pan.baidu.com/s/18r354ru1JfKhDdo_VL9uZg) to download my tinetuned AlexNet weights and SVM Models, and put them in corresponding directory in "Moldes/".
 3. Install the required python modules, and then instruct the follow cmd:
 ```
 python demo.py
